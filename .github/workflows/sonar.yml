@@ -25,7 +25,7 @@ jobs:
         run: |
          docker build -t tic-tac-toe .
          docker tag tic-tac-toe pushparaj414/tic-tac-toe:latest
-         docker login -u ${{secrets.DOCKERHUB_USERNAME}} -P${{secrets.DOCKERHUB_USERNAME}}
+         docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -P${{ secrets.DOCKERHUB_TOKEN }}
          docker push pushparaj414/tic-tac-toe:latest
         env:
           DOCKER_CLI_ACI: 1
